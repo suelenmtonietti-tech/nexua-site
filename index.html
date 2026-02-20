@@ -12,9 +12,11 @@
 
     <!-- SEO / Preview (WhatsApp / redes) -->
     <meta property="og:title" content="Nexuá — Automação & IA para operações leves" />
-    <meta property="og:description" content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência de você." />
+    <meta
+      property="og:description"
+      content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência de você."
+    />
     <meta property="og:type" content="website" />
-    <!-- Suba uma imagem chamada logo-nexua.png no GitHub (na raiz do repo) -->
     <meta property="og:image" content="logo-nexua.png" />
 
     <style>
@@ -26,8 +28,15 @@
         --text: rgba(255,255,255,.90);
         --muted: rgba(255,255,255,.66);
         --muted2: rgba(255,255,255,.50);
-        --accent: #29d3ff;
-        --accent2:#a855f7;
+
+        /* Cores base inspiradas na sua logo (turquesa + laranja) */
+        --brand-teal: #08B6C6;
+        --brand-orange: #F28B3A;
+
+        /* Acentos usados nos elementos */
+        --accent: var(--brand-teal);
+        --accent2: var(--brand-orange);
+
         --good:#22c55e;
         --warn:#f59e0b;
         --shadow: 0 18px 60px rgba(0,0,0,.45);
@@ -35,37 +44,59 @@
         --radius2: 26px;
         --max: 1120px;
       }
+
       *{box-sizing:border-box}
       html,body{height:100%}
-      html{scroll-behavior:smooth;} /* (3) scroll suave */
+      html{scroll-behavior:smooth;}
+
       body{
         margin:0;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
         color:var(--text);
+
+        /* Gradiente suave (sem "quebra") usando as cores da logo */
         background:
-          radial-gradient(1200px 700px at 15% -10%, rgba(41,211,255,.25), transparent 60%),
-          radial-gradient(1000px 600px at 85% 0%, rgba(168,85,247,.20), transparent 55%),
-          radial-gradient(900px 500px at 50% 110%, rgba(41,211,255,.12), transparent 60%),
+          radial-gradient(1200px 820px at 12% -10%,
+            rgba(8,182,198,.26) 0%,
+            rgba(8,182,198,.14) 38%,
+            rgba(8,182,198,0) 78%
+          ),
+          radial-gradient(1120px 780px at 92% 6%,
+            rgba(242,139,58,.18) 0%,
+            rgba(242,139,58,.10) 42%,
+            rgba(242,139,58,0) 82%
+          ),
+          radial-gradient(1000px 720px at 55% 118%,
+            rgba(8,182,198,.12) 0%,
+            rgba(8,182,198,.06) 45%,
+            rgba(8,182,198,0) 88%
+          ),
           var(--bg);
+
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
+
       a{color:inherit; text-decoration:none}
       .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
       .nav{
         position:sticky; top:0; z-index:50;
         backdrop-filter: blur(14px);
         background: rgba(11,15,20,.65);
         border-bottom:1px solid rgba(255,255,255,.08);
       }
+
       .nav-inner{
         display:flex; align-items:center; justify-content:space-between;
         padding:14px 0;
       }
+
       .brand{
         display:flex; align-items:center; gap:10px;
         font-weight:700; letter-spacing:.2px;
       }
 
-      /* (4) Logo real */
       .logo-img{
         width:36px;
         height:36px;
@@ -83,12 +114,13 @@
       }
       .nav-links a{padding:8px 10px; border-radius:10px}
       .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
       .cta{
         display:inline-flex; align-items:center; justify-content:center; gap:10px;
         padding:12px 14px;
         border-radius:14px;
         border:1px solid rgba(255,255,255,.12);
-        background: linear-gradient(135deg, rgba(41,211,255,.18), rgba(168,85,247,.16));
+        background: linear-gradient(135deg, rgba(8,182,198,.18), rgba(242,139,58,.14));
         box-shadow: 0 14px 45px rgba(0,0,0,.35);
         font-weight:650;
         font-size:14px;
@@ -96,8 +128,8 @@
       .cta:hover{filter:brightness(1.06)}
       .cta .dot{
         width:8px; height:8px; border-radius:99px;
-        background:linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 0 0 6px rgba(41,211,255,.12);
+        background:linear-gradient(135deg, var(--brand-teal), var(--brand-orange));
+        box-shadow: 0 0 0 6px rgba(8,182,198,.12);
       }
 
       /* Hero */
@@ -106,6 +138,7 @@
         display:grid; grid-template-columns: 1.15fr .85fr; gap:28px;
         align-items:stretch;
       }
+
       .pill{
         display:inline-flex; align-items:center; gap:10px;
         border:1px solid rgba(255,255,255,.12);
@@ -116,32 +149,37 @@
         font-size:13px;
       }
       .pill strong{color:var(--text); font-weight:650}
+
       h1{
         margin:16px 0 12px;
         font-size: clamp(34px, 4.2vw, 56px);
         line-height:1.03;
         letter-spacing:-.8px;
       }
+
       .lead{
         margin:0 0 18px;
         font-size: clamp(16px, 1.6vw, 20px);
         line-height:1.55;
         color:var(--muted);
       }
+
       .hero-actions{
         display:flex; gap:12px; flex-wrap:wrap;
         margin:18px 0 10px;
       }
+
       .cta-primary{
         display:inline-flex; align-items:center; justify-content:center; gap:10px;
         padding:14px 16px;
         border-radius:16px;
         border:1px solid rgba(255,255,255,.14);
-        background: linear-gradient(135deg, rgba(41,211,255,.35), rgba(168,85,247,.25));
+        background: linear-gradient(135deg, rgba(8,182,198,.36), rgba(242,139,58,.22));
         box-shadow: 0 16px 50px rgba(0,0,0,.38);
         font-weight:750;
       }
       .cta-primary:hover{filter:brightness(1.06)}
+
       .cta-secondary{
         display:inline-flex; align-items:center; justify-content:center; gap:10px;
         padding:14px 16px;
@@ -152,6 +190,7 @@
         font-weight:650;
       }
       .cta-secondary:hover{background: rgba(255,255,255,.08)}
+
       .subnote{color:var(--muted2); font-size:13px}
 
       .panel{
@@ -163,6 +202,7 @@
       }
       .panel .inner{padding:18px}
       .mini-grid{display:grid; gap:12px}
+
       .mini-card{
         border:1px solid rgba(255,255,255,.10);
         background: rgba(255,255,255,.04);
@@ -171,6 +211,7 @@
       }
       .mini-title{font-weight:700; margin:0 0 6px}
       .mini-text{margin:0; color:var(--muted); font-size:14px; line-height:1.45}
+
       .chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
       .chip{
         font-size:12px; color:rgba(255,255,255,.78);
@@ -178,6 +219,7 @@
         background: rgba(255,255,255,.04);
         padding:7px 10px; border-radius:999px;
       }
+
       .metric{
         display:flex; align-items:center; justify-content:space-between;
         padding:12px 14px;
@@ -186,11 +228,12 @@
         font-size:13px;
       }
       .metric strong{color:var(--text)}
+
       .spark{
         height:6px; width:120px;
         border-radius:99px;
-        background: linear-gradient(90deg, rgba(41,211,255,.65), rgba(168,85,247,.65));
-        opacity:.9;
+        background: linear-gradient(90deg, rgba(8,182,198,.70), rgba(242,139,58,.70));
+        opacity:.95;
       }
 
       section{padding:54px 0}
@@ -205,11 +248,13 @@
         line-height:1.55;
         max-width: 760px;
       }
+
       .grid-3{
         display:grid;
         grid-template-columns: repeat(3, 1fr);
         gap:16px;
       }
+
       .card{
         border:1px solid rgba(255,255,255,.12);
         background: rgba(255,255,255,.04);
@@ -218,19 +263,22 @@
       }
       .card h3{margin:0 0 8px; font-size:16px; letter-spacing:-.2px}
       .card p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+
       .icon{
         width:40px; height:40px;
         border-radius:14px;
         display:grid; place-items:center;
         margin-bottom:12px;
         border:1px solid rgba(255,255,255,.12);
-        background: linear-gradient(135deg, rgba(41,211,255,.18), rgba(168,85,247,.14));
+        background: linear-gradient(135deg, rgba(8,182,198,.18), rgba(242,139,58,.12));
       }
+
       .list{
         margin:16px 0 0; padding:0; list-style:none;
         display:grid; gap:10px; color:var(--muted);
       }
       .list li{display:flex; gap:10px; align-items:flex-start}
+
       .check{
         width:18px; height:18px; border-radius:6px;
         border:1px solid rgba(255,255,255,.14);
@@ -243,7 +291,7 @@
 
       .quote{
         border:1px solid rgba(255,255,255,.12);
-        background: linear-gradient(135deg, rgba(41,211,255,.10), rgba(168,85,247,.08));
+        background: linear-gradient(135deg, rgba(8,182,198,.10), rgba(242,139,58,.08));
         border-radius: var(--radius2);
         padding:22px;
         display:flex; gap:16px; align-items:flex-start;
@@ -283,6 +331,7 @@
         padding:7px 10px;
         border-radius:999px;
       }
+
       .beforeafter{margin-top:12px; display:grid; gap:10px}
       .row{
         display:flex; gap:10px; align-items:flex-start;
@@ -299,6 +348,7 @@
         background: rgba(255,255,255,.04);
         color:rgba(255,255,255,.75);
       }
+
       .gain{
         margin-top:12px;
         border-top:1px solid rgba(255,255,255,.08);
@@ -308,7 +358,7 @@
         font-size:14px;
       }
       .gain strong{
-        background: linear-gradient(135deg, rgba(34,197,94,.20), rgba(41,211,255,.18));
+        background: linear-gradient(135deg, rgba(8,182,198,.18), rgba(242,139,58,.14));
         border:1px solid rgba(255,255,255,.10);
         padding:6px 10px;
         border-radius:999px;
@@ -321,8 +371,10 @@
         align-items:stretch;
       }
       .offer .card{height:100%}
+
       .form{display:grid; gap:10px; margin-top:12px}
       label{font-size:12px; color:var(--muted2)}
+
       input, textarea{
         width:100%;
         padding:12px 12px;
@@ -333,19 +385,22 @@
         outline:none;
       }
       textarea{min-height:96px; resize:vertical}
+
       input:focus, textarea:focus{
-        border-color: rgba(41,211,255,.45);
-        box-shadow: 0 0 0 4px rgba(41,211,255,.12)
+        border-color: rgba(8,182,198,.55);
+        box-shadow: 0 0 0 4px rgba(8,182,198,.14);
       }
+
       .submit{
         cursor:pointer;
         border:1px solid rgba(255,255,255,.14);
-        background: linear-gradient(135deg, rgba(41,211,255,.32), rgba(168,85,247,.22));
+        background: linear-gradient(135deg, rgba(8,182,198,.30), rgba(242,139,58,.18));
         padding:12px 14px;
         border-radius:16px;
         font-weight:750;
       }
       .submit:hover{filter:brightness(1.06)}
+
       .fineprint{font-size:12px; color:var(--muted2); line-height:1.4}
 
       footer{
@@ -364,8 +419,7 @@
   </head>
 
   <body>
-    <!-- (1) CONFIG: troque aqui pelo seu WhatsApp real -->
-    <!-- Exemplo: https://wa.me/5541999999999 -->
+    <!-- WhatsApp -->
     <script>
       const WHATSAPP_LINK = "https://wa.me/5544998045022";
     </script>
@@ -373,7 +427,6 @@
     <div class="nav">
       <div class="wrap nav-inner">
         <div class="brand">
-          <!-- (4) Logo real: suba "logo-nexua.png" na raiz do repo -->
           <img class="logo-img" src="logo-nexua.png" alt="Nexuá" />
           <div>Nexuá</div>
         </div>
@@ -385,7 +438,6 @@
           <a href="#diagnostico">Diagnóstico</a>
         </div>
 
-        <!-- (2) abre em nova aba -->
         <a class="cta" id="ctaTop" href="#" target="_blank" rel="noopener">
           <span class="dot" aria-hidden="true"></span>
           Agendar diagnóstico
@@ -410,7 +462,6 @@
             </p>
 
             <div class="hero-actions">
-              <!-- (2) abre em nova aba -->
               <a class="cta-primary" id="ctaHero" href="#" target="_blank" rel="noopener">
                 <span class="dot" aria-hidden="true"></span>
                 Agendar diagnóstico gratuito
@@ -568,7 +619,6 @@
             <div class="case">
               <span class="badge">💬 Atendimento</span>
               <div class="beforeafter">
-                <!-- extra: removi a palavra “dono” -->
                 <div class="row"><span class="tag">Antes</span><span>vendas dependiam de uma pessoa central</span></div>
                 <div class="row"><span class="tag">Depois</span><span>atendimento com etapas claras + follow-up automático</span></div>
               </div>
@@ -598,7 +648,6 @@
               </ul>
 
               <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
-                <!-- (2) abre em nova aba -->
                 <a class="cta-primary" id="ctaOffer" href="#" target="_blank" rel="noopener">
                   <span class="dot" aria-hidden="true"></span>
                   Quero entender onde minha empresa trava
@@ -642,7 +691,7 @@
             <div class="mark" aria-hidden="true">✓</div>
             <p>
               <strong>O negócio só cresce de verdade quando para de depender de você.</strong><br/>
-                          </p>
+            </p>
           </div>
         </div>
       </section>
@@ -656,14 +705,11 @@
     </footer>
 
     <script>
-      // Footer year
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // (2) CTA links + mantém target blank (já está no HTML)
       const ctas = ["ctaTop", "ctaHero", "ctaOffer"].map(id => document.getElementById(id));
       ctas.forEach(el => { if (el) el.href = WHATSAPP_LINK; });
 
-      // Mini form -> WhatsApp prefilled
       function enc(v){ return encodeURIComponent(v || ""); }
 
       document.getElementById("sendWhatsapp").addEventListener("click", () => {
@@ -679,7 +725,6 @@ Principal dor hoje: ${dor || "-"}
 
 Pode me passar os próximos passos?`;
 
-        // abre WhatsApp em nova aba/janela
         const url = `${WHATSAPP_LINK}?text=${enc(msg)}`;
         window.open(url, "_blank", "noopener");
       });
