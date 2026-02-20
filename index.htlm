@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexuá — Automação & IA para operações leves</title>
+    <meta
+      name="description"
+      content="A Nexuá organiza o operacional com automações e IA para que sua empresa rode com menos retrabalho e menos dependência de você."
+    />
+    <style>
+      :root{
+        --bg: #0b0f14;
+        --panel: rgba(255,255,255,.06);
+        --panel2: rgba(255,255,255,.04);
+        --border: rgba(255,255,255,.12);
+        --text: rgba(255,255,255,.90);
+        --muted: rgba(255,255,255,.66);
+        --muted2: rgba(255,255,255,.50);
+        --accent: #29d3ff;
+        --accent2:#a855f7;
+        --good:#22c55e;
+        --warn:#f59e0b;
+        --shadow: 0 18px 60px rgba(0,0,0,.45);
+        --radius: 18px;
+        --radius2: 26px;
+        --max: 1120px;
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        color:var(--text);
+        background:
+          radial-gradient(1200px 700px at 15% -10%, rgba(41,211,255,.25), transparent 60%),
+          radial-gradient(1000px 600px at 85% 0%, rgba(168,85,247,.20), transparent 55%),
+          radial-gradient(900px 500px at 50% 110%, rgba(41,211,255,.12), transparent 60%),
+          var(--bg);
+      }
+      a{color:inherit; text-decoration:none}
+      .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+      .nav{
+        position:sticky; top:0; z-index:50;
+        backdrop-filter: blur(14px);
+        background: rgba(11,15,20,.65);
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+      .nav-inner{
+        display:flex; align-items:center; justify-content:space-between;
+        padding:14px 0;
+      }
+      .brand{
+        display:flex; align-items:center; gap:10px;
+        font-weight:700; letter-spacing:.2px;
+      }
+      .logo{
+        width:36px; height:36px; border-radius:12px;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(41,211,255,.95), rgba(41,211,255,.15) 55%, transparent 70%),
+          radial-gradient(circle at 70% 70%, rgba(168,85,247,.9), rgba(168,85,247,.14) 55%, transparent 72%),
+          rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.12);
+        box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      }
+      .nav-links{
+        display:flex; align-items:center; gap:18px;
+        color:var(--muted);
+        font-size:14px;
+      }
+      .nav-links a{padding:8px 10px; border-radius:10px}
+      .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+      .cta{
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        padding:12px 14px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.12);
+        background: linear-gradient(135deg, rgba(41,211,255,.18), rgba(168,85,247,.16));
+        box-shadow: 0 14px 45px rgba(0,0,0,.35);
+        font-weight:650;
+        font-size:14px;
+      }
+      .cta:hover{filter:brightness(1.06)}
+      .cta .dot{
+        width:8px; height:8px; border-radius:99px;
+        background:linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 6px rgba(41,211,255,.12);
+      }
+
+      /* Hero */
+      .hero{padding:72px 0 38px}
+      .hero-grid{
+        display:grid; grid-template-columns: 1.15fr .85fr; gap:28px;
+        align-items:stretch;
+      }
+      .pill{
+        display:inline-flex; align-items:center; gap:10px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.05);
+        padding:8px 12px;
+        border-radius:999px;
+        color:var(--muted);
+        font-size:13px;
+      }
+      .pill strong{color:var(--text); font-weight:650}
+      h1{
+        margin:16px 0 12px;
+        font-size: clamp(34px, 4.2vw, 56px);
+        line-height:1.03;
+        letter-spacing:-.8px;
+      }
+      .lead{
+        margin:0 0 18px;
+        font-size: clamp(16px, 1.6vw, 20px);
+        line-height:1.55;
+        color:var(--muted);
+      }
+      .hero-actions{
+        display:flex; gap:12px; flex-wrap:wrap;
+        margin:18px 0 10px;
+      }
+      .cta-primary{
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        padding:14px 16px;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,.14);
+        background: linear-gradient(135deg, rgba(41,211,255,.35), rgba(168,85,247,.25));
+        box-shadow: 0 16px 50px rgba(0,0,0,.38);
+        font-weight:750;
+      }
+      .cta-primary:hover{filter:brightness(1.06)}
+      .cta-secondary{
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        padding:14px 16px;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.05);
+        color:var(--text);
+        font-weight:650;
+      }
+      .cta-secondary:hover{background: rgba(255,255,255,.08)}
+      .subnote{color:var(--muted2); font-size:13px}
+
+      .panel{
+        border:1px solid rgba(255,255,255,.12);
+        background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        border-radius: var(--radius2);
+        box-shadow: var(--shadow);
+        overflow:hidden;
+      }
+      .panel .inner{padding:18px}
+      .mini-grid{
+        display:grid; gap:12px;
+      }
+      .mini-card{
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.04);
+        border-radius: 16px;
+        padding:14px;
+      }
+      .mini-title{font-weight:700; margin:0 0 6px}
+      .mini-text{margin:0; color:var(--muted); font-size:14px; line-height:1.45}
+      .chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+      .chip{
+        font-size:12px; color:rgba(255,255,255,.78);
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        padding:7px 10px; border-radius:999px;
+      }
+      .metric{
+        display:flex; align-items:center; justify-content:space-between;
+        padding:12px 14px;
+        border-top:1px solid rgba(255,255,255,.08);
+        color:var(--muted);
+        font-size:13px;
+      }
+      .metric strong{color:var(--text)}
+      .spark{
+        height:6px; width:120px;
+        border-radius:99px;
+        background: linear-gradient(90deg, rgba(41,211,255,.65), rgba(168,85,247,.65));
+        opacity:.9;
+      }
+
+      /* Sections */
+      section{padding:54px 0}
+      .section-title{
+        font-size: clamp(22px, 2.3vw, 30px);
+        margin:0 0 10px;
+        letter-spacing:-.3px;
+      }
+      .section-lead{
+        margin:0 0 22px;
+        color:var(--muted);
+        line-height:1.55;
+        max-width: 760px;
+      }
+      .grid-3{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:16px;
+      }
+      .card{
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        border-radius: var(--radius);
+        padding:18px;
+      }
+      .card h3{margin:0 0 8px; font-size:16px; letter-spacing:-.2px}
+      .card p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+      .icon{
+        width:40px; height:40px;
+        border-radius:14px;
+        display:grid; place-items:center;
+        margin-bottom:12px;
+        border:1px solid rgba(255,255,255,.12);
+        background: linear-gradient(135deg, rgba(41,211,255,.18), rgba(168,85,247,.14));
+      }
+      .list{
+        margin:16px 0 0; padding:0; list-style:none;
+        display:grid; gap:10px; color:var(--muted);
+      }
+      .list li{display:flex; gap:10px; align-items:flex-start}
+      .check{
+        width:18px; height:18px; border-radius:6px;
+        border:1px solid rgba(255,255,255,.14);
+        background: rgba(255,255,255,.05);
+        display:grid; place-items:center;
+        margin-top:2px;
+        color:rgba(255,255,255,.75);
+        font-size:12px;
+      }
+
+      /* Big quote */
+      .quote{
+        border:1px solid rgba(255,255,255,.12);
+        background: linear-gradient(135deg, rgba(41,211,255,.10), rgba(168,85,247,.08));
+        border-radius: var(--radius2);
+        padding:22px;
+        display:flex; gap:16px; align-items:flex-start;
+      }
+      .quote .mark{
+        width:44px; height:44px; border-radius:16px;
+        background: rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.12);
+        display:grid; place-items:center;
+        font-weight:900;
+        color:rgba(255,255,255,.75);
+      }
+      .quote p{
+        margin:0;
+        font-size: clamp(16px, 1.6vw, 20px);
+        line-height:1.5;
+        color:rgba(255,255,255,.88);
+      }
+
+      /* Cases */
+      .cases{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:16px;
+      }
+      .case{
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        border-radius: var(--radius);
+        padding:18px;
+      }
+      .badge{
+        display:inline-flex; align-items:center; gap:8px;
+        font-size:12px;
+        color:rgba(255,255,255,.78);
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        padding:7px 10px;
+        border-radius:999px;
+      }
+      .beforeafter{
+        margin-top:12px;
+        display:grid; gap:10px;
+      }
+      .row{
+        display:flex; gap:10px; align-items:flex-start;
+        color:var(--muted);
+        font-size:14px;
+        line-height:1.45;
+      }
+      .tag{
+        min-width:56px;
+        font-size:12px;
+        border-radius:999px;
+        padding:6px 10px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        color:rgba(255,255,255,.75);
+      }
+      .gain{
+        margin-top:12px;
+        border-top:1px solid rgba(255,255,255,.08);
+        padding-top:12px;
+        color:rgba(255,255,255,.84);
+        display:flex; justify-content:space-between; align-items:center;
+        font-size:14px;
+      }
+      .gain strong{
+        background: linear-gradient(135deg, rgba(34,197,94,.20), rgba(41,211,255,.18));
+        border:1px solid rgba(255,255,255,.10);
+        padding:6px 10px;
+        border-radius:999px;
+      }
+
+      /* Offer */
+      .offer{
+        display:grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap:16px;
+        align-items:stretch;
+      }
+      .offer .card{height:100%}
+      .form{
+        display:grid; gap:10px;
+        margin-top:12px;
+      }
+      label{font-size:12px; color:var(--muted2)}
+      input, textarea{
+        width:100%;
+        padding:12px 12px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
+        color:var(--text);
+        outline:none;
+      }
+      textarea{min-height:96px; resize:vertical}
+      input:focus, textarea:focus{border-color: rgba(41,211,255,.45); box-shadow: 0 0 0 4px rgba(41,211,255,.12)}
+      .submit{
+        cursor:pointer;
+        border:1px solid rgba(255,255,255,.14);
+        background: linear-gradient(135deg, rgba(41,211,255,.32), rgba(168,85,247,.22));
+        padding:12px 14px;
+        border-radius:16px;
+        font-weight:750;
+      }
+      .submit:hover{filter:brightness(1.06)}
+      .fineprint{font-size:12px; color:var(--muted2); line-height:1.4}
+
+      /* Footer */
+      footer{
+        padding:34px 0 44px;
+        border-top:1px solid rgba(255,255,255,.08);
+        color:var(--muted2);
+        font-size:13px;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px){
+        .hero-grid, .offer{grid-template-columns:1fr}
+        .grid-3, .cases{grid-template-columns:1fr}
+        .nav-links{display:none}
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- CONFIG: troque para seu WhatsApp -->
+    <!-- Exemplo: https://wa.me/5541999999999 -->
+    <script>
+      const WHATSAPP_LINK = "https://wa.me/55SEUNUMERO";
+    </script>
+
+    <div class="nav">
+      <div class="wrap nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>Nexuá</div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#dor">Problema</a>
+          <a href="#solucao">Solução</a>
+          <a href="#casos">Casos</a>
+          <a href="#diagnostico">Diagnóstico</a>
+        </div>
+
+        <a class="cta" id="ctaTop" href="#">
+          <span class="dot" aria-hidden="true"></span>
+          Agendar diagnóstico
+        </a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="pill">
+              <span>Automação & IA</span>
+              <span style="opacity:.55">•</span>
+              <strong>Operação leve e previsível</strong>
+            </div>
+
+            <h1>Sua empresa não precisa trabalhar mais. <br/>Precisa funcionar melhor.</h1>
+
+            <p class="lead">
+              A Nexuá organiza o operacional com automações e IA para que a empresa rode
+              com menos retrabalho e menos dependência de você o tempo todo.
+            </p>
+
+            <div class="hero-actions">
+              <a class="cta-primary" id="ctaHero" href="#">
+                <span class="dot" aria-hidden="true"></span>
+                Agendar diagnóstico gratuito
+              </a>
+              <a class="cta-secondary" href="#casos">Ver casos práticos</a>
+            </div>
+
+            <div class="subnote">Sem trocar seu sistema. Sem complicar sua rotina.</div>
+          </div>
+
+          <div class="panel" aria-label="Resumo visual">
+            <div class="inner">
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <div class="mini-title">Visão rápida do seu operacional</div>
+                  <p class="mini-text">
+                    Onde estão os gargalos, os erros recorrentes e as tarefas repetitivas que drenam energia.
+                  </p>
+                  <div class="chiprow">
+                    <span class="chip">WhatsApp</span>
+                    <span class="chip">Planilhas</span>
+                    <span class="chip">Retrabalho</span>
+                    <span class="chip">Dependência</span>
+                  </div>
+                </div>
+
+                <div class="mini-card">
+                  <div class="mini-title">Automação + IA</div>
+                  <p class="mini-text">
+                    Fluxos, integrações e agentes de IA para reduzir conferência manual e padronizar decisões.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="metric">
+              <span>Meta: menos urgência, mais previsibilidade</span>
+              <span class="spark" aria-hidden="true"></span>
+            </div>
+            <div class="metric">
+              <span>Resultado típico</span>
+              <strong>tempo de volta</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Problema -->
+      <section id="dor">
+        <div class="wrap">
+          <h2 class="section-title">Você não está sobrecarregado por falta de esforço.</h2>
+          <p class="section-lead">
+            A maioria das empresas trava porque tudo depende de alguém decidir, lembrar ou conferir.
+            E quando isso acontece… o crescimento vira estresse.
+          </p>
+
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">⚡</div>
+              <h3>Tudo vira urgente</h3>
+              <p>O dia vira incêndio: o que era rotina vira “apagar fogo”.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🧩</div>
+              <h3>Dependência de pessoas</h3>
+              <p>Sem processo claro, a operação depende da sua validação o tempo todo.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🔁</div>
+              <h3>Retrabalho e erro bobo</h3>
+              <p>Tarefas manuais repetidas aumentam erro, atraso e custo invisível.</p>
+            </div>
+          </div>
+
+          <ul class="list" style="margin-top:18px">
+            <li><span class="check">✓</span><span>mensagens o dia inteiro pedindo confirmação</span></li>
+            <li><span class="check">✓</span><span>tarefas repetidas manualmente</span></li>
+            <li><span class="check">✓</span><span>planilhas espalhadas + WhatsApp + memória</span></li>
+            <li><span class="check">✓</span><span>quando você para, a empresa para</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Frase destaque -->
+      <section>
+        <div class="wrap">
+          <div class="quote">
+            <div class="mark" aria-hidden="true">“</div>
+            <p>
+              <strong>Crescer sem processo não é crescimento.</strong><br/>
+              É só aumentar o caos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solução -->
+      <section id="solucao">
+        <div class="wrap">
+          <h2 class="section-title">O que a Nexuá faz na prática</h2>
+          <p class="section-lead">
+            A gente não complica. A gente organiza: clareza, fluxo e execução com automação e IA.
+          </p>
+
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">🧭</div>
+              <h3>1) Mapear</h3>
+              <p>Entendemos onde seu tempo e dinheiro estão vazando: gargalos, erros e dependências.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">⚙️</div>
+              <h3>2) Organizar</h3>
+              <p>Criamos fluxos, integrações e automações para tirar o manual e padronizar o processo.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">📈</div>
+              <h3>3) Operar</h3>
+              <p>Sua empresa passa a funcionar com previsibilidade — sem você precisar acompanhar tudo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Casos -->
+      <section id="casos">
+        <div class="wrap">
+          <h2 class="section-title">Casos práticos (antes → depois)</h2>
+          <p class="section-lead">
+            Exemplos típicos de onde a automação e a IA devolvem tempo e reduzem erro sem “trocar tudo”.
+          </p>
+
+          <div class="cases">
+            <div class="case">
+              <span class="badge">📦 Operação</span>
+              <div class="beforeafter">
+                <div class="row"><span class="tag">Antes</span><span>conferência manual diária e retrabalho</span></div>
+                <div class="row"><span class="tag">Depois</span><span>resumo automático enviado no WhatsApp + registro central</span></div>
+              </div>
+              <div class="gain">
+                <span>Impacto</span>
+                <strong>economia: 40h/mês</strong>
+              </div>
+            </div>
+
+            <div class="case">
+              <span class="badge">🧠 Decisão</span>
+              <div class="beforeafter">
+                <div class="row"><span class="tag">Antes</span><span>equipe perguntando o tempo todo</span></div>
+                <div class="row"><span class="tag">Depois</span><span>processo guiado + respostas padronizadas</span></div>
+              </div>
+              <div class="gain">
+                <span>Impacto</span>
+                <strong>menos erro</strong>
+              </div>
+            </div>
+
+            <div class="case">
+              <span class="badge">💬 Atendimento</span>
+              <div class="beforeafter">
+                <div class="row"><span class="tag">Antes</span><span>vendas dependiam do dono</span></div>
+                <div class="row"><span class="tag">Depois</span><span>atendimento com etapas claras + follow-up automático</span></div>
+              </div>
+              <div class="gain">
+                <span>Impacto</span>
+                <strong>mais previsível</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diagnóstico / Oferta -->
+      <section id="diagnostico">
+        <div class="wrap">
+          <h2 class="section-title">Diagnóstico gratuito de eficiência operacional</h2>
+          <p class="section-lead">
+            Você mostra como trabalha hoje. Nós mostramos onde sua empresa perde tempo — e o que dá para aliviar rápido.
+            Sem compromisso. Sem implantação obrigatória.
+          </p>
+
+          <div class="offer">
+            <div class="card">
+              <h3 style="margin-top:0">O que você recebe</h3>
+              <ul class="list">
+                <li><span class="check">✓</span><span>mapa dos gargalos e tarefas repetitivas</span></li>
+                <li><span class="check">✓</span><span>prioridades de melhoria (o que dá mais retorno)</span></li>
+                <li><span class="check">✓</span><span>um plano simples de automação por etapas</span></li>
+              </ul>
+
+              <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
+                <a class="cta-primary" id="ctaOffer" href="#">
+                  <span class="dot" aria-hidden="true"></span>
+                  Quero entender onde minha empresa trava
+                </a>
+                <a class="cta-secondary" href="#dor">Ver problema</a>
+              </div>
+
+              <p class="fineprint" style="margin-top:14px">
+                Dica: quanto mais real você trouxer (prints, rotina, exemplos), mais certeiro fica o diagnóstico.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-top:0">Enviar pelo WhatsApp (opcional)</h3>
+              <p style="margin:0 0 10px; color:var(--muted); line-height:1.5; font-size:14px">
+                Preencha rapidinho e clique em “Enviar no WhatsApp”. (Tudo vai como mensagem.)
+              </p>
+
+              <div class="form" id="miniForm">
+                <div>
+                  <label for="nome">Seu nome</label>
+                  <input id="nome" type="text" placeholder="Ex.: Suelen" />
+                </div>
+                <div>
+                  <label for="empresa">Empresa</label>
+                  <input id="empresa" type="text" placeholder="Ex.: Nexuá" />
+                </div>
+                <div>
+                  <label for="dorPrincipal">Principal dor hoje</label>
+                  <textarea id="dorPrincipal" placeholder="Ex.: retrabalho, equipe depende de mim, planilhas, WhatsApp..."></textarea>
+                </div>
+                <button class="submit" id="sendWhatsapp" type="button">Enviar no WhatsApp</button>
+                <p class="fineprint">
+                  Ao clicar, você será redirecionado para o WhatsApp com a mensagem já pronta.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote" style="margin-top:18px">
+            <div class="mark" aria-hidden="true">✓</div>
+            <p>
+              <strong>Empresa boa não é a que vende muito.</strong><br/>
+              É a que continua funcionando quando você sai da sala.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap" style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div>© <span id="year"></span> Nexuá. Automação & IA para operações leves.</div>
+        <div style="color:rgba(255,255,255,.55)">Contato: WhatsApp • Diagnóstico gratuito</div>
+      </div>
+    </footer>
+
+    <script>
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // CTA links
+      const ctas = ["ctaTop", "ctaHero", "ctaOffer"].map(id => document.getElementById(id));
+      ctas.forEach(el => { if (el) el.href = WHATSAPP_LINK; });
+
+      // Mini form -> WhatsApp prefilled
+      function enc(v){ return encodeURIComponent(v || ""); }
+
+      document.getElementById("sendWhatsapp").addEventListener("click", () => {
+        const nome = document.getElementById("nome").value.trim();
+        const empresa = document.getElementById("empresa").value.trim();
+        const dor = document.getElementById("dorPrincipal").value.trim();
+
+        const msg =
+`Olá! Quero agendar um diagnóstico gratuito com a Nexuá.
+Nome: ${nome || "-"}
+Empresa: ${empresa || "-"}
+Principal dor hoje: ${dor || "-"}
+
+Pode me passar os próximos passos?`;
+
+        // WHATSAPP_LINK must be wa.me/55XXXXXXXXXXX (sem +, sem espaços)
+        const url = `${WHATSAPP_LINK}?text=${enc(msg)}`;
+        window.open(url, "_blank");
+      });
+    </script>
+  </body>
+</html>
