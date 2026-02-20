@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexuá — Automação & IA para operações leves</title>
+    <title>Nexuá IA — Gestão leve e previsível</title>
+
     <meta
       name="description"
-      content="A Nexuá organiza o operacional com automações e IA para que sua empresa rode com menos retrabalho e menos dependência de você."
+      content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência de você."
     />
+
+    <!-- SEO / Preview (WhatsApp / redes) -->
+    <meta property="og:title" content="Nexuá — Automação & IA para operações leves" />
+    <meta property="og:description" content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência de você." />
+    <meta property="og:type" content="website" />
+    <!-- Suba uma imagem chamada logo-nexua.png no GitHub (na raiz do repo) -->
+    <meta property="og:image" content="logo-nexua.png" />
+
     <style>
       :root{
         --bg: #0b0f14;
@@ -28,6 +37,7 @@
       }
       *{box-sizing:border-box}
       html,body{height:100%}
+      html{scroll-behavior:smooth;} /* (3) scroll suave */
       body{
         margin:0;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -54,15 +64,18 @@
         display:flex; align-items:center; gap:10px;
         font-weight:700; letter-spacing:.2px;
       }
-      .logo{
-        width:36px; height:36px; border-radius:12px;
-        background:
-          radial-gradient(circle at 30% 30%, rgba(41,211,255,.95), rgba(41,211,255,.15) 55%, transparent 70%),
-          radial-gradient(circle at 70% 70%, rgba(168,85,247,.9), rgba(168,85,247,.14) 55%, transparent 72%),
-          rgba(255,255,255,.06);
+
+      /* (4) Logo real */
+      .logo-img{
+        width:36px;
+        height:36px;
+        border-radius:12px;
         border:1px solid rgba(255,255,255,.12);
+        object-fit: cover;
         box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        background: rgba(255,255,255,.06);
       }
+
       .nav-links{
         display:flex; align-items:center; gap:18px;
         color:var(--muted);
@@ -149,9 +162,7 @@
         overflow:hidden;
       }
       .panel .inner{padding:18px}
-      .mini-grid{
-        display:grid; gap:12px;
-      }
+      .mini-grid{display:grid; gap:12px}
       .mini-card{
         border:1px solid rgba(255,255,255,.10);
         background: rgba(255,255,255,.04);
@@ -182,7 +193,6 @@
         opacity:.9;
       }
 
-      /* Sections */
       section{padding:54px 0}
       .section-title{
         font-size: clamp(22px, 2.3vw, 30px);
@@ -231,7 +241,6 @@
         font-size:12px;
       }
 
-      /* Big quote */
       .quote{
         border:1px solid rgba(255,255,255,.12);
         background: linear-gradient(135deg, rgba(41,211,255,.10), rgba(168,85,247,.08));
@@ -254,7 +263,6 @@
         color:rgba(255,255,255,.88);
       }
 
-      /* Cases */
       .cases{
         display:grid;
         grid-template-columns: repeat(3, 1fr);
@@ -275,10 +283,7 @@
         padding:7px 10px;
         border-radius:999px;
       }
-      .beforeafter{
-        margin-top:12px;
-        display:grid; gap:10px;
-      }
+      .beforeafter{margin-top:12px; display:grid; gap:10px}
       .row{
         display:flex; gap:10px; align-items:flex-start;
         color:var(--muted);
@@ -309,7 +314,6 @@
         border-radius:999px;
       }
 
-      /* Offer */
       .offer{
         display:grid;
         grid-template-columns: 1.15fr .85fr;
@@ -317,10 +321,7 @@
         align-items:stretch;
       }
       .offer .card{height:100%}
-      .form{
-        display:grid; gap:10px;
-        margin-top:12px;
-      }
+      .form{display:grid; gap:10px; margin-top:12px}
       label{font-size:12px; color:var(--muted2)}
       input, textarea{
         width:100%;
@@ -332,7 +333,10 @@
         outline:none;
       }
       textarea{min-height:96px; resize:vertical}
-      input:focus, textarea:focus{border-color: rgba(41,211,255,.45); box-shadow: 0 0 0 4px rgba(41,211,255,.12)}
+      input:focus, textarea:focus{
+        border-color: rgba(41,211,255,.45);
+        box-shadow: 0 0 0 4px rgba(41,211,255,.12)
+      }
       .submit{
         cursor:pointer;
         border:1px solid rgba(255,255,255,.14);
@@ -344,7 +348,6 @@
       .submit:hover{filter:brightness(1.06)}
       .fineprint{font-size:12px; color:var(--muted2); line-height:1.4}
 
-      /* Footer */
       footer{
         padding:34px 0 44px;
         border-top:1px solid rgba(255,255,255,.08);
@@ -352,7 +355,6 @@
         font-size:13px;
       }
 
-      /* Responsive */
       @media (max-width: 980px){
         .hero-grid, .offer{grid-template-columns:1fr}
         .grid-3, .cases{grid-template-columns:1fr}
@@ -362,16 +364,17 @@
   </head>
 
   <body>
-    <!-- CONFIG: troque para seu WhatsApp -->
+    <!-- (1) CONFIG: troque aqui pelo seu WhatsApp real -->
     <!-- Exemplo: https://wa.me/5541999999999 -->
     <script>
-      const WHATSAPP_LINK = "https://wa.me/55SEUNUMERO";
+      const WHATSAPP_LINK = "https://wa.me/5544998045022";
     </script>
 
     <div class="nav">
       <div class="wrap nav-inner">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <!-- (4) Logo real: suba "logo-nexua.png" na raiz do repo -->
+          <img class="logo-img" src="logo-nexua.png" alt="Nexuá" />
           <div>Nexuá</div>
         </div>
 
@@ -382,7 +385,8 @@
           <a href="#diagnostico">Diagnóstico</a>
         </div>
 
-        <a class="cta" id="ctaTop" href="#">
+        <!-- (2) abre em nova aba -->
+        <a class="cta" id="ctaTop" href="#" target="_blank" rel="noopener">
           <span class="dot" aria-hidden="true"></span>
           Agendar diagnóstico
         </a>
@@ -402,12 +406,12 @@
             <h1>Sua empresa não precisa trabalhar mais. <br/>Precisa funcionar melhor.</h1>
 
             <p class="lead">
-              A Nexuá organiza o operacional com automações e IA para que a empresa rode
-              com menos retrabalho e menos dependência de você o tempo todo.
+              A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência.
             </p>
 
             <div class="hero-actions">
-              <a class="cta-primary" id="ctaHero" href="#">
+              <!-- (2) abre em nova aba -->
+              <a class="cta-primary" id="ctaHero" href="#" target="_blank" rel="noopener">
                 <span class="dot" aria-hidden="true"></span>
                 Agendar diagnóstico gratuito
               </a>
@@ -423,7 +427,7 @@
                 <div class="mini-card">
                   <div class="mini-title">Visão rápida do seu operacional</div>
                   <p class="mini-text">
-                    Onde estão os gargalos, os erros recorrentes e as tarefas repetitivas que drenam energia.
+                    Onde estão os gargalos, os erros recorrentes e as tarefas repetitivas que drenam energia e dinheiro.
                   </p>
                   <div class="chiprow">
                     <span class="chip">WhatsApp</span>
@@ -455,7 +459,6 @@
     </header>
 
     <main>
-      <!-- Problema -->
       <section id="dor">
         <div class="wrap">
           <h2 class="section-title">Você não está sobrecarregado por falta de esforço.</h2>
@@ -477,7 +480,7 @@
             </div>
             <div class="card">
               <div class="icon" aria-hidden="true">🔁</div>
-              <h3>Retrabalho e erro bobo</h3>
+              <h3>Retrabalho</h3>
               <p>Tarefas manuais repetidas aumentam erro, atraso e custo invisível.</p>
             </div>
           </div>
@@ -491,20 +494,18 @@
         </div>
       </section>
 
-      <!-- Frase destaque -->
       <section>
         <div class="wrap">
           <div class="quote">
             <div class="mark" aria-hidden="true">“</div>
             <p>
               <strong>Crescer sem processo não é crescimento.</strong><br/>
-              É só aumentar o caos.
+              É aumentar o caos.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Solução -->
       <section id="solucao">
         <div class="wrap">
           <h2 class="section-title">O que a Nexuá faz na prática</h2>
@@ -516,7 +517,7 @@
             <div class="card">
               <div class="icon" aria-hidden="true">🧭</div>
               <h3>1) Mapear</h3>
-              <p>Entendemos onde seu tempo e dinheiro estão vazando: gargalos, erros e dependências.</p>
+              <p>Entendemos onde seu tempo e dinheiro estão sendo desperdiçados: gargalos, erros e dependências.</p>
             </div>
             <div class="card">
               <div class="icon" aria-hidden="true">⚙️</div>
@@ -526,13 +527,12 @@
             <div class="card">
               <div class="icon" aria-hidden="true">📈</div>
               <h3>3) Operar</h3>
-              <p>Sua empresa passa a funcionar com previsibilidade — sem você precisar acompanhar tudo.</p>
+              <p>Sua empresa passa a funcionar com previsibilidade.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Casos -->
       <section id="casos">
         <div class="wrap">
           <h2 class="section-title">Casos práticos (antes → depois)</h2>
@@ -568,7 +568,8 @@
             <div class="case">
               <span class="badge">💬 Atendimento</span>
               <div class="beforeafter">
-                <div class="row"><span class="tag">Antes</span><span>vendas dependiam do dono</span></div>
+                <!-- extra: removi a palavra “dono” -->
+                <div class="row"><span class="tag">Antes</span><span>vendas dependiam de uma pessoa central</span></div>
                 <div class="row"><span class="tag">Depois</span><span>atendimento com etapas claras + follow-up automático</span></div>
               </div>
               <div class="gain">
@@ -580,13 +581,11 @@
         </div>
       </section>
 
-      <!-- Diagnóstico / Oferta -->
       <section id="diagnostico">
         <div class="wrap">
           <h2 class="section-title">Diagnóstico gratuito de eficiência operacional</h2>
           <p class="section-lead">
-            Você mostra como trabalha hoje. Nós mostramos onde sua empresa perde tempo — e o que dá para aliviar rápido.
-            Sem compromisso. Sem implantação obrigatória.
+            Você mostra como trabalha hoje. Nós mostramos onde sua empresa perde tempo.
           </p>
 
           <div class="offer">
@@ -599,7 +598,8 @@
               </ul>
 
               <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
-                <a class="cta-primary" id="ctaOffer" href="#">
+                <!-- (2) abre em nova aba -->
+                <a class="cta-primary" id="ctaOffer" href="#" target="_blank" rel="noopener">
                   <span class="dot" aria-hidden="true"></span>
                   Quero entender onde minha empresa trava
                 </a>
@@ -641,9 +641,8 @@
           <div class="quote" style="margin-top:18px">
             <div class="mark" aria-hidden="true">✓</div>
             <p>
-              <strong>Empresa boa não é a que vende muito.</strong><br/>
-              É a que continua funcionando quando você sai da sala.
-            </p>
+              <strong>O negócio só cresce de verdade quando para de depender de você.</strong><br/>
+                          </p>
           </div>
         </div>
       </section>
@@ -660,7 +659,7 @@
       // Footer year
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // CTA links
+      // (2) CTA links + mantém target blank (já está no HTML)
       const ctas = ["ctaTop", "ctaHero", "ctaOffer"].map(id => document.getElementById(id));
       ctas.forEach(el => { if (el) el.href = WHATSAPP_LINK; });
 
@@ -680,9 +679,9 @@ Principal dor hoje: ${dor || "-"}
 
 Pode me passar os próximos passos?`;
 
-        // WHATSAPP_LINK must be wa.me/55XXXXXXXXXXX (sem +, sem espaços)
+        // abre WhatsApp em nova aba/janela
         const url = `${WHATSAPP_LINK}?text=${enc(msg)}`;
-        window.open(url, "_blank");
+        window.open(url, "_blank", "noopener");
       });
     </script>
   </body>
