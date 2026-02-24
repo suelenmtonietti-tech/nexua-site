@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexuá IA — Gestão leve e previsível</title>
+    <title>Nexuá IA — Operação leve e previsível</title>
 
     <meta
       name="description"
-      content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione sem retrabalho e sem dependência de você."
+      content="A Nexuá ajuda pequenas e médias empresas a reduzir retrabalho, diminuir dependência da gestão e ganhar previsibilidade com automação e IA aplicadas à rotina real."
     />
 
     <!-- SEO / Preview (WhatsApp / redes) -->
-    <meta property="og:title" content="Nexuá IA — Gestão leve e previsível" />
+    <meta property="og:title" content="Nexuá IA — Operação leve e previsível" />
     <meta
       property="og:description"
-      content="A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência de você."
+      content="Menos esforço, mais estrutura: automação e IA para reduzir retrabalho e dependência na sua operação."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="logo-nexua.png" />
@@ -29,20 +29,17 @@
         --muted: rgba(255,255,255,.66);
         --muted2: rgba(255,255,255,.50);
 
-        /* Cores base inspiradas na sua logo (turquesa + laranja) */
+        /* Cores base inspiradas na logo (turquesa + laranja) */
         --brand-teal: #08B6C6;
         --brand-orange: #F28B3A;
 
-        /* Acentos usados nos elementos */
         --accent: var(--brand-teal);
         --accent2: var(--brand-orange);
 
-        --good:#22c55e;
-        --warn:#f59e0b;
         --shadow: 0 18px 60px rgba(0,0,0,.45);
         --radius: 18px;
         --radius2: 26px;
-        --max: 1120px;
+        --max: 1140px;
       }
 
       *{box-sizing:border-box}
@@ -54,7 +51,7 @@
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
         color:var(--text);
 
-        /* Gradiente suave (sem "quebra") usando as cores da logo */
+        /* Gradiente suave usando as cores da logo */
         background:
           radial-gradient(1200px 820px at 12% -10%,
             rgba(8,182,198,.26) 0%,
@@ -94,7 +91,7 @@
 
       .brand{
         display:flex; align-items:center; gap:10px;
-        font-weight:700; letter-spacing:.2px;
+        font-weight:750; letter-spacing:.2px;
       }
 
       .logo-img{
@@ -126,14 +123,14 @@
         font-size:14px;
       }
       .cta:hover{filter:brightness(1.06)}
-      .cta .dot{
+      .dot{
         width:8px; height:8px; border-radius:99px;
         background:linear-gradient(135deg, var(--brand-teal), var(--brand-orange));
         box-shadow: 0 0 0 6px rgba(8,182,198,.12);
       }
 
       /* Hero */
-      .hero{padding:72px 0 38px}
+      .hero{padding:72px 0 42px}
       .hero-grid{
         display:grid; grid-template-columns: 1.15fr .85fr; gap:28px;
         align-items:stretch;
@@ -153,15 +150,22 @@
       h1{
         margin:16px 0 12px;
         font-size: clamp(34px, 4.2vw, 56px);
-        line-height:1.03;
+        line-height:1.06;
         letter-spacing:-.8px;
       }
 
       .lead{
-        margin:0 0 18px;
+        margin:0 0 14px;
         font-size: clamp(16px, 1.6vw, 20px);
         line-height:1.55;
         color:var(--muted);
+      }
+
+      .reinforce{
+        margin:0 0 18px;
+        color:rgba(255,255,255,.78);
+        font-size:14px;
+        line-height:1.5;
       }
 
       .hero-actions{
@@ -176,7 +180,7 @@
         border:1px solid rgba(255,255,255,.14);
         background: linear-gradient(135deg, rgba(8,182,198,.36), rgba(242,139,58,.22));
         box-shadow: 0 16px 50px rgba(0,0,0,.38);
-        font-weight:750;
+        font-weight:800;
       }
       .cta-primary:hover{filter:brightness(1.06)}
 
@@ -209,7 +213,7 @@
         border-radius: 16px;
         padding:14px;
       }
-      .mini-title{font-weight:700; margin:0 0 6px}
+      .mini-title{font-weight:750; margin:0 0 6px}
       .mini-text{margin:0; color:var(--muted); font-size:14px; line-height:1.45}
 
       .chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
@@ -228,7 +232,6 @@
         font-size:13px;
       }
       .metric strong{color:var(--text)}
-
       .spark{
         height:6px; width:120px;
         border-radius:99px;
@@ -236,16 +239,16 @@
         opacity:.95;
       }
 
-      section{padding:54px 0}
+      section{padding:72px 0}
       .section-title{
-        font-size: clamp(22px, 2.3vw, 30px);
+        font-size: clamp(22px, 2.3vw, 36px);
         margin:0 0 10px;
         letter-spacing:-.3px;
       }
       .section-lead{
         margin:0 0 22px;
         color:var(--muted);
-        line-height:1.55;
+        line-height:1.65;
         max-width: 760px;
       }
 
@@ -259,10 +262,10 @@
         border:1px solid rgba(255,255,255,.12);
         background: rgba(255,255,255,.04);
         border-radius: var(--radius);
-        padding:18px;
+        padding:22px;
       }
-      .card h3{margin:0 0 8px; font-size:16px; letter-spacing:-.2px}
-      .card p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+      .card h3{margin:0 0 8px; font-size:18px; letter-spacing:-.2px}
+      .card p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
 
       .icon{
         width:40px; height:40px;
@@ -337,7 +340,7 @@
         display:flex; gap:10px; align-items:flex-start;
         color:var(--muted);
         font-size:14px;
-        line-height:1.45;
+        line-height:1.5;
       }
       .tag{
         min-width:56px;
@@ -356,12 +359,14 @@
         color:rgba(255,255,255,.84);
         display:flex; justify-content:space-between; align-items:center;
         font-size:14px;
+        gap:10px;
       }
       .gain strong{
         background: linear-gradient(135deg, rgba(8,182,198,.18), rgba(242,139,58,.14));
         border:1px solid rgba(255,255,255,.10);
         padding:6px 10px;
         border-radius:999px;
+        white-space:nowrap;
       }
 
       .offer{
@@ -397,7 +402,8 @@
         background: linear-gradient(135deg, rgba(8,182,198,.30), rgba(242,139,58,.18));
         padding:12px 14px;
         border-radius:16px;
-        font-weight:750;
+        font-weight:800;
+        min-height:48px;
       }
       .submit:hover{filter:brightness(1.06)}
 
@@ -414,6 +420,7 @@
         .hero-grid, .offer{grid-template-columns:1fr}
         .grid-3, .cases{grid-template-columns:1fr}
         .nav-links{display:none}
+        section{padding:56px 0}
       }
     </style>
   </head>
@@ -421,6 +428,7 @@
   <body>
     <!-- WhatsApp -->
     <script>
+      // Edite aqui se precisar trocar o número:
       const WHATSAPP_LINK = "https://wa.me/5544998045022";
     </script>
 
@@ -432,8 +440,9 @@
         </div>
 
         <div class="nav-links">
-          <a href="#dor">Problema</a>
-          <a href="#solucao">Solução</a>
+          <a href="#dor">Dor</a>
+          <a href="#custo">Custo invisível</a>
+          <a href="#metodo">Método</a>
           <a href="#casos">Casos</a>
           <a href="#diagnostico">Diagnóstico</a>
         </div>
@@ -445,7 +454,8 @@
       </div>
     </div>
 
-    <header class="hero">
+    <!-- SEÇÃO 1: HERO -->
+    <header class="hero" id="topo">
       <div class="wrap">
         <div class="hero-grid">
           <div>
@@ -455,10 +465,15 @@
               <strong>Operação leve e previsível</strong>
             </div>
 
-            <h1>Sua empresa não precisa trabalhar mais. <br/>Precisa funcionar melhor.</h1>
+            <h1>Sua operação não precisa de mais esforço. <br/>Precisa de estrutura.</h1>
 
             <p class="lead">
-              A Nexuá organiza o operacional com automações e IA para que sua empresa funcione com menos retrabalho e menos dependência.
+              A Nexuá ajuda pequenas e médias empresas a reduzir retrabalho, diminuir a dependência da gestão e ganhar previsibilidade
+              com automação e IA aplicadas à rotina real.
+            </p>
+
+            <p class="reinforce">
+              Sem trocar tudo. Sem complicar. Com clareza de fluxo, prioridade e execução.
             </p>
 
             <div class="hero-actions">
@@ -469,40 +484,44 @@
               <a class="cta-secondary" href="#casos">Ver casos práticos</a>
             </div>
 
-            <div class="subnote">Sem trocar seu sistema. Sem complicar sua rotina.</div>
+            <div class="subnote">
+              Ideal para empresas que operam no limite entre WhatsApp, planilhas e urgências constantes.
+            </div>
           </div>
 
           <div class="panel" aria-label="Resumo visual">
             <div class="inner">
               <div class="mini-grid">
                 <div class="mini-card">
-                  <div class="mini-title">Visão rápida do seu operacional</div>
+                  <div class="mini-title">Visão rápida da sua operação</div>
                   <p class="mini-text">
-                    Onde estão os gargalos, os erros recorrentes e as tarefas repetitivas que drenam energia e dinheiro.
+                    Identifique gargalos, erros recorrentes e dependências — e transforme esforço em previsibilidade.
                   </p>
                   <div class="chiprow">
                     <span class="chip">WhatsApp</span>
                     <span class="chip">Planilhas</span>
+                    <span class="chip">Validações</span>
                     <span class="chip">Retrabalho</span>
-                    <span class="chip">Dependência</span>
                   </div>
                 </div>
 
                 <div class="mini-card">
-                  <div class="mini-title">Automação + IA</div>
+                  <div class="mini-title">Automação + IA (do jeito certo)</div>
                   <p class="mini-text">
-                    Fluxos, integrações e agentes de IA para reduzir conferência manual e padronizar decisões.
+                    Primeiro a gente organiza o fluxo. Depois, automatiza o que faz sentido — sem “acelerar o caos”.
                   </p>
                 </div>
               </div>
             </div>
+
             <div class="metric">
-              <span>Meta: menos urgência, mais previsibilidade</span>
+              <span>Meta: menos urgência, mais controle</span>
               <span class="spark" aria-hidden="true"></span>
             </div>
+
             <div class="metric">
-              <span>Resultado típico</span>
-              <strong>tempo de volta</strong>
+              <span>Entrega típica</span>
+              <strong>plano claro + próximos passos</strong>
             </div>
           </div>
         </div>
@@ -510,117 +529,132 @@
     </header>
 
     <main>
+      <!-- SEÇÃO 2: DOR / SINTOMAS -->
       <section id="dor">
         <div class="wrap">
-          <h2 class="section-title">Você não está sobrecarregado por falta de esforço.</h2>
+          <h2 class="section-title">Quando a operação depende de memória e urgência, o crescimento cobra caro.</h2>
           <p class="section-lead">
-            A maioria das empresas trava porque tudo depende de alguém decidir, lembrar ou conferir.
-            E quando isso acontece… o crescimento vira estresse.
+            Na maioria das PMEs, a sobrecarga não acontece por falta de esforço.
+            Ela surge quando processos são informais, decisões se concentram em poucas pessoas
+            e tarefas repetitivas consomem o tempo que deveria ser estratégico.
           </p>
 
           <div class="grid-3">
             <div class="card">
-              <div class="icon" aria-hidden="true">⚡</div>
-              <h3>Tudo vira urgente</h3>
-              <p>O dia vira incêndio: o que era rotina vira “apagar fogo”.</p>
-            </div>
-            <div class="card">
-              <div class="icon" aria-hidden="true">🧩</div>
-              <h3>Dependência de pessoas</h3>
-              <p>Sem processo claro, a operação depende da sua validação o tempo todo.</p>
+              <div class="icon" aria-hidden="true">💬</div>
+              <h3>Confirmação o dia inteiro</h3>
+              <p>Mensagens sem parar, decisões travando e validações concentradas em você.</p>
             </div>
             <div class="card">
               <div class="icon" aria-hidden="true">🔁</div>
-              <h3>Retrabalho</h3>
-              <p>Tarefas manuais repetidas aumentam erro, atraso e custo invisível.</p>
+              <h3>Retrabalho por falta de padrão</h3>
+              <p>Erros recorrentes, reprocesso e tempo perdido em tarefas que deveriam estar resolvidas.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🧠</div>
+              <h3>Controle “mental”</h3>
+              <p>Planilhas + WhatsApp + memória: difícil saber o que está acontecendo de verdade.</p>
             </div>
           </div>
 
           <ul class="list" style="margin-top:18px">
-            <li><span class="check">✓</span><span>mensagens o dia inteiro pedindo confirmação</span></li>
-            <li><span class="check">✓</span><span>tarefas repetidas manualmente</span></li>
-            <li><span class="check">✓</span><span>planilhas espalhadas + WhatsApp + memória</span></li>
-            <li><span class="check">✓</span><span>quando você para, a empresa para</span></li>
+            <li><span class="check">✓</span><span>atrasos por gargalos de validação</span></li>
+            <li><span class="check">✓</span><span>dificuldade para acompanhar execução e status</span></li>
+            <li><span class="check">✓</span><span>dependência de uma ou duas pessoas para “fazer acontecer”</span></li>
+            <li><span class="check">✓</span><span>quando você para, a operação sente</span></li>
           </ul>
         </div>
       </section>
 
-      <section>
+      <!-- SEÇÃO 3: CONSEQUÊNCIA / CUSTO INVISÍVEL -->
+      <section id="custo">
         <div class="wrap">
           <div class="quote">
             <div class="mark" aria-hidden="true">“</div>
             <p>
-              <strong>Crescer sem processo não é crescimento.</strong><br/>
-              É aumentar o caos.
+              Sem processo, crescer vira sinônimo de aumentar a complexidade, não o resultado.
+              <br/><br/>
+              <strong>É aí que a Nexuá entra:</strong> nós organizamos a casa antes de automatizar.
+              Porque automação sem fluxo claro só acelera o caos.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="solucao">
+      <!-- SEÇÃO 4: COMO A NEXUÁ RESOLVE (O MÉTODO) -->
+      <section id="metodo">
         <div class="wrap">
-          <h2 class="section-title">O que a Nexuá faz na prática</h2>
+          <h2 class="section-title">Automação e IA com foco em uma operação leve e previsível.</h2>
           <p class="section-lead">
-            A gente não complica. A gente organiza: clareza, fluxo e execução com automação e IA.
+            Atuamos onde a operação mais trava: em tarefas repetitivas, gargalos de comunicação,
+            dependência de validação e falta de acompanhamento claro.
           </p>
 
           <div class="grid-3">
             <div class="card">
-              <div class="icon" aria-hidden="true">🧭</div>
-              <h3>1) Mapear</h3>
-              <p>Entendemos onde seu tempo e dinheiro estão sendo desperdiçados: gargalos, erros e dependências.</p>
+              <div class="icon" aria-hidden="true">1</div>
+              <h3>Diagnosticar o que pesa</h3>
+              <p>Entendemos onde tempo e dinheiro estão sendo desperdiçados em gargalos, erros e dependências.</p>
             </div>
             <div class="card">
-              <div class="icon" aria-hidden="true">⚙️</div>
-              <h3>2) Organizar</h3>
-              <p>Criamos fluxos, integrações e automações para tirar o manual e padronizar o processo.</p>
+              <div class="icon" aria-hidden="true">2</div>
+              <h3>Estruturar o fluxo</h3>
+              <p>Desenhamos processos claros e criamos fluxos de trabalho lógicos antes de qualquer automação.</p>
             </div>
             <div class="card">
-              <div class="icon" aria-hidden="true">📈</div>
-              <h3>3) Operar</h3>
-              <p>Sua empresa passa a funcionar com previsibilidade.</p>
+              <div class="icon" aria-hidden="true">3</div>
+              <h3>Automatizar o que faz sentido</h3>
+              <p>Implementamos automações e IAs que tiram o manual do caminho e padronizam a operação.</p>
             </div>
+          </div>
+
+          <div class="quote" style="margin-top:18px">
+            <div class="mark" aria-hidden="true">✓</div>
+            <p>
+              <strong>Menos urgência.</strong> Mais controle. Mais espaço para crescer.
+            </p>
           </div>
         </div>
       </section>
 
+      <!-- SEÇÃO 5: CASOS PRÁTICOS -->
       <section id="casos">
         <div class="wrap">
-          <h2 class="section-title">Casos práticos (antes → depois)</h2>
+          <h2 class="section-title">Onde a Nexuá gera resultado na prática.</h2>
           <p class="section-lead">
-            Exemplos típicos de onde a automação e a IA devolvem tempo e reduzem erro sem “trocar tudo”.
+            Exemplos de melhorias operacionais com automação e IA — sem exigir a troca completa dos seus sistemas.
           </p>
 
           <div class="cases">
             <div class="case">
-              <span class="badge">📦 Operação</span>
+              <span class="badge">📈 Operação Comercial</span>
               <div class="beforeafter">
-                <div class="row"><span class="tag">Antes</span><span>conferência manual diária e retrabalho</span></div>
-                <div class="row"><span class="tag">Depois</span><span>resumo automático enviado no WhatsApp + registro central</span></div>
+                <div class="row"><span class="tag">Antes</span><span>Propostas enviadas manualmente, follow-up dependendo da agenda do vendedor.</span></div>
+                <div class="row"><span class="tag">Depois</span><span>Propostas geradas e enviadas via sistema, com lembretes de follow-up automáticos.</span></div>
               </div>
               <div class="gain">
                 <span>Impacto</span>
-                <strong>economia: 40h/mês</strong>
-              </div>
-            </div>
-
-            <div class="case">
-              <span class="badge">🧠 Decisão</span>
-              <div class="beforeafter">
-                <div class="row"><span class="tag">Antes</span><span>equipe perguntando o tempo todo</span></div>
-                <div class="row"><span class="tag">Depois</span><span>processo guiado + respostas padronizadas</span></div>
-              </div>
-              <div class="gain">
-                <span>Impacto</span>
-                <strong>menos erro</strong>
+                <strong>+20% velocidade</strong>
               </div>
             </div>
 
             <div class="case">
               <span class="badge">💬 Atendimento</span>
               <div class="beforeafter">
-                <div class="row"><span class="tag">Antes</span><span>vendas dependiam de uma pessoa central</span></div>
-                <div class="row"><span class="tag">Depois</span><span>atendimento com etapas claras + follow-up automático</span></div>
+                <div class="row"><span class="tag">Antes</span><span>Pedidos e informações espalhados em WhatsApp, perda de contexto e atrasos.</span></div>
+                <div class="row"><span class="tag">Depois</span><span>Fluxo padronizado + registro central + respostas guiadas por etapa.</span></div>
+              </div>
+              <div class="gain">
+                <span>Impacto</span>
+                <strong>menos retrabalho</strong>
+              </div>
+            </div>
+
+            <div class="case">
+              <span class="badge">🧾 Gestão</span>
+              <div class="beforeafter">
+                <div class="row"><span class="tag">Antes</span><span>Falta de visibilidade do que está pendente e do que foi concluído (tudo “na cabeça”).</span></div>
+                <div class="row"><span class="tag">Depois</span><span>Painel simples + alertas + rotinas automáticas para acompanhar execução e status.</span></div>
               </div>
               <div class="gain">
                 <span>Impacto</span>
@@ -631,39 +665,41 @@
         </div>
       </section>
 
+      <!-- SEÇÃO 6 + 7: DIAGNÓSTICO + FORMULÁRIO -->
       <section id="diagnostico">
         <div class="wrap">
-          <h2 class="section-title">Diagnóstico gratuito de eficiência operacional</h2>
+          <h2 class="section-title">Receba um diagnóstico gratuito de eficiência operacional.</h2>
           <p class="section-lead">
-            Você mostra como trabalha hoje. Nós mostramos onde sua empresa perde tempo.
+            Em uma conversa prática de 30 minutos, você nos mostra como sua operação funciona hoje,
+            e nós identificamos os principais pontos de perda de tempo, dependência e retrabalho.
           </p>
 
           <div class="offer">
             <div class="card">
               <h3 style="margin-top:0">O que você recebe</h3>
               <ul class="list">
-                <li><span class="check">✓</span><span>mapa dos gargalos e tarefas repetitivas</span></li>
-                <li><span class="check">✓</span><span>prioridades de melhoria (o que dá mais retorno)</span></li>
-                <li><span class="check">✓</span><span>um plano simples de automação por etapas</span></li>
+                <li><span class="check">✓</span><span>Visão clara dos gargalos da sua rotina.</span></li>
+                <li><span class="check">✓</span><span>Prioridades de melhoria com maior retorno sobre o investimento.</span></li>
+                <li><span class="check">✓</span><span>Um plano de próximos passos possíveis, sem complicação.</span></li>
               </ul>
 
               <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
                 <a class="cta-primary" id="ctaOffer" href="#" target="_blank" rel="noopener">
                   <span class="dot" aria-hidden="true"></span>
-                  Quero entender onde minha empresa trava
+                  Quero entender onde minha empresa está travando
                 </a>
-                <a class="cta-secondary" href="#dor">Ver problema</a>
+                <a class="cta-secondary" href="#metodo">Ver o método</a>
               </div>
 
               <p class="fineprint" style="margin-top:14px">
-                Dica: quanto mais real você trouxer (prints, rotina, exemplos), mais certeiro fica o diagnóstico.
+                Sem compromisso. Sem proposta genérica. Primeiro, a gente entende a sua operação.
               </p>
             </div>
 
             <div class="card">
-              <h3 style="margin-top:0">Enviar pelo WhatsApp (opcional)</h3>
+              <h3 style="margin-top:0">Enviar pelo WhatsApp (rápido)</h3>
               <p style="margin:0 0 10px; color:var(--muted); line-height:1.5; font-size:14px">
-                Preencha rapidinho e clique em “Enviar no WhatsApp”. (Tudo vai como mensagem.)
+                Preencha e clique em “Enviar no WhatsApp”. A mensagem já vai pronta.
               </p>
 
               <div class="form" id="miniForm">
@@ -673,13 +709,19 @@
                 </div>
                 <div>
                   <label for="empresa">Empresa</label>
-                  <input id="empresa" type="text" placeholder="Ex.: Nexuá" />
+                  <input id="empresa" type="text" placeholder="Ex.: Minha Empresa" />
+                </div>
+                <div>
+                  <label for="contato">Contato (WhatsApp ou e-mail)</label>
+                  <input id="contato" type="text" placeholder="Ex.: (44) 9xxxx-xxxx ou email@empresa.com" />
                 </div>
                 <div>
                   <label for="dorPrincipal">Principal dor hoje</label>
-                  <textarea id="dorPrincipal" placeholder="Ex.: retrabalho, equipe depende de mim, planilhas, WhatsApp..."></textarea>
+                  <textarea id="dorPrincipal" placeholder="Ex.: retrabalho, equipe depende de mim, planilhas, WhatsApp, validações..."></textarea>
                 </div>
+
                 <button class="submit" id="sendWhatsapp" type="button">Enviar no WhatsApp</button>
+
                 <p class="fineprint">
                   Ao clicar, você será redirecionado para o WhatsApp com a mensagem já pronta.
                 </p>
@@ -687,10 +729,13 @@
             </div>
           </div>
 
+          <!-- SEÇÃO 8: FECHAMENTO DE MARCA -->
           <div class="quote" style="margin-top:18px">
             <div class="mark" aria-hidden="true">✓</div>
             <p>
-              <strong>O negócio só cresce de verdade quando para de depender de você.</strong><br/>
+              <strong>Seu negócio cresce de verdade quando deixa de depender de você para funcionar.</strong>
+              <br/><br/>
+              A Nexuá existe para transformar esforço em estrutura — e estrutura em previsibilidade.
             </p>
           </div>
         </div>
@@ -715,15 +760,18 @@
       document.getElementById("sendWhatsapp").addEventListener("click", () => {
         const nome = document.getElementById("nome").value.trim();
         const empresa = document.getElementById("empresa").value.trim();
+        const contato = document.getElementById("contato").value.trim();
         const dor = document.getElementById("dorPrincipal").value.trim();
 
         const msg =
-`Olá! Quero agendar um diagnóstico gratuito com a Nexuá.
+`Olá! Quero agendar um diagnóstico gratuito de eficiência operacional com a Nexuá.
+
 Nome: ${nome || "-"}
 Empresa: ${empresa || "-"}
+Contato: ${contato || "-"}
 Principal dor hoje: ${dor || "-"}
 
-Pode me passar os próximos passos?`;
+Podemos agendar uma conversa de 30 minutos?`;
 
         const url = `${WHATSAPP_LINK}?text=${enc(msg)}`;
         window.open(url, "_blank", "noopener");
